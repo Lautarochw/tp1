@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function esgrito(texto){ 
+         let i;
+         let esclama=0;
+         let letra=0;
+         let quilombo = /^[a-zA-z]+$/;
+         for(i = 0; i < texto.length; i++){
+            
+            if(texto.charAt(i) == '!'){
+                esclama++;
+            }
+            else if(quilombo.test(texto.charAt(i))){
+                letra++;
+            }
+           
+         }
+
+            let grito = "escrito";
+
+            if(esclama > letra){
+                grito = "ESGRITO";
+            }
+
+            return grito;
+        }
+
+        let msg=prompt('ingrese una palabra','' );
+        document.write(esgrito(msg));
+    </script>
+</body>
+</html>
